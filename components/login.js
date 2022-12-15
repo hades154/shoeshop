@@ -9,6 +9,8 @@ import {
   Image
 } from 'react-native';
 import axios from 'axios'
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -22,9 +24,20 @@ const LoginScreen = ({ navigation }) => {
 
 
   const handleLogin = (state) => {
-    axios.post('http://103.197.184.55:8080/login', {}, { params: state }).
+    axios.post('http://103.197.184.55:8080/api/login', {}, { params: state }).
       then((res) => {
         console.log(res.data)
+
+        //luu data
+        const currentUser = res.data
+        //save to storage
+        AsyncStorage.setItem('address', currentUser.address)
+        AsyncStorage.setItem('avatar', currentUser.avatar)
+        AsyncStorage.setItem('numberPhone', currentUser.numberPhone)
+        AsyncStorage.setItem('username', currentUser.username)
+
+
+        //navogato to home
         navigation.navigate('home')
       }).
       catch((err) => alert("usename or password incorrect"))
