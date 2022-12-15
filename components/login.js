@@ -100,14 +100,13 @@ const LoginScreen = ({ navigation }) => {
         <CustomButton label={"Login"} onPress={() => { handleLogin({ username: username, password: password }) }} />
 
         <Text style={{ textAlign: 'center', color: '#666', marginBottom: 30 }}>
-          Or, login with ...
         </Text>
 
         <View
           style={{
             flexDirection: 'row',
             justifyContent: 'center',
-            marginBottom: 30,
+            marginBottom: 50,
           }}>
           <Text>New to the app?</Text>
           <TouchableOpacity onPress={() => navigation.navigate('Register')}>
