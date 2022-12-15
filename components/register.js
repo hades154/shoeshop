@@ -108,16 +108,31 @@ const RegisterScreen = ({ navigation }) => {
 
                 <CustomButton label={"Register"} onPress={() => {
 
-                    if (password == confirmPassword) {
+                    let errorFlag = false;
+                    // input validation
+                    if (username.length == 0 || password.length == 0) {
+                        alert("username and password can't null")
+                    }
 
-                        handleRegister({ username: username, password: password })
-                    }
                     else {
-                        alert("password and confirmPassword not matched")
+                        if (password.length > 7 && password.length < 20) {
+                            if (password == confirmPassword) {
+
+                                handleRegister({ username: username, password: password })
+                            }
+                            else {
+                                alert("password and confirmPassword not matched")
+                            }
+                        }
+                        else {
+                            alert("password was wrong format")
+                        }
                     }
+
+
                 }} />
 
-                <Text style={{ textAlign: 'center', color: '#666', marginBottom: -10 }}>
+                <Text style={{ textAlign: 'center', color: '#666', marginBottom: -40 }}>
                 </Text>
 
                 <View
