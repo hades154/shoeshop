@@ -61,7 +61,7 @@ const PersonPage = ({ navigation }) => {
               marginTop: 15,
               marginBottom: 5,
             }]}>{username}</Title>
-            <Caption style={styles.caption}>@Hades154</Caption>
+            <Caption style={styles.caption}>@{username}</Caption>
           </View>
         </View>
       </View>
@@ -77,7 +77,7 @@ const PersonPage = ({ navigation }) => {
         </View>
         <View style={styles.row}>
           <Icon name="email" color="#777777" size={20} />
-          <Text style={{ color: "#777777", marginLeft: 20 }}>anhtuan@gmail.com</Text>
+          <Text style={{ color: "#777777", marginLeft: 20 }}>{username}@gmail.com</Text>
         </View>
       </View>
 
