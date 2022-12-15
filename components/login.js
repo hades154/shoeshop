@@ -99,7 +99,7 @@ const LoginScreen = ({ navigation }) => {
 
         <CustomButton label={"Login"} onPress={() => { handleLogin({ username: username, password: password }) }} />
 
-        <Text style={{ textAlign: 'center', color: '#666', marginBottom: 30 }}>
+        <Text style={{ textAlign: 'center', color: '#666', marginBottom: -20 }}>
         </Text>
 
         <View
